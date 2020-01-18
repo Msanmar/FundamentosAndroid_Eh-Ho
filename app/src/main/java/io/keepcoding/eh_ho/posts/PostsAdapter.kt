@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_post.view.*
 import io.keepcoding.eh_ho.R
 import io.keepcoding.eh_ho.data.Post
+import kotlinx.android.synthetic.main.item_post.view.labelDatePost
+import kotlinx.android.synthetic.main.item_post.view.labelTitlePost
+import kotlinx.android.synthetic.main.item_post.view.labelTopicID
+import kotlinx.android.synthetic.main.item_post2.view.*
 import java.util.*
 
 class PostsAdapter (val postClickListener: ((Post) -> Unit)? = null): RecyclerView.Adapter<PostsAdapter.PostHolder>() {
@@ -20,7 +24,7 @@ class PostsAdapter (val postClickListener: ((Post) -> Unit)? = null): RecyclerVi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_post,parent,false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_post2,parent,false)
 
     return PostHolder(view)
     }
@@ -55,6 +59,7 @@ class PostsAdapter (val postClickListener: ((Post) -> Unit)? = null): RecyclerVi
                 tag = field
                 field?.let{
                     //labelTitlePost.text = it.title
+                   // imageUser = it.
                     labelTitlePost.text = it.title
                     labelDatePost.text = it.date.toString()
                     labelTopicID.text = "TopicID: " + it.topicId.toString()
