@@ -11,6 +11,7 @@ import io.keepcoding.eh_ho.data.UserRepo
 import io.keepcoding.eh_ho.login.LoginActivity
 import io.keepcoding.eh_ho.posts.CreatePostFragment
 import io.keepcoding.eh_ho.posts.EXTRA_TOPIC_ID
+import io.keepcoding.eh_ho.posts.EXTRA_TOPIC_TITLE
 import io.keepcoding.eh_ho.posts.PostsActivity
 
 
@@ -21,7 +22,7 @@ class TopicsActivity : AppCompatActivity(), TopicsFragment.TopicsInteractionList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_topics)
-
+        this.title = "Eh-Ho:       Latest Topics"
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .add(R.id.fragmentContainer, TopicsFragment())
@@ -64,6 +65,7 @@ class TopicsActivity : AppCompatActivity(), TopicsFragment.TopicsInteractionList
     private fun goToPosts(topic: Topic) {
         val intent = Intent(this, PostsActivity::class.java)
         intent.putExtra(EXTRA_TOPIC_ID, topic.id)
+        intent.putExtra(EXTRA_TOPIC_TITLE, topic.title)
 
         Toast.makeText(this, "Vamos a post activity", Toast.LENGTH_SHORT).show()
         startActivity(intent)

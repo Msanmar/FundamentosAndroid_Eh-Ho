@@ -83,6 +83,7 @@ data class Post (
     val content: String,
     val author: String,
     val topicId: Int,
+    val avatar: String,
     val date: Date = Date()
 ){
     companion object {
@@ -100,6 +101,7 @@ data class Post (
                 val parsedPost = parsePost(jsonPosts.getJSONObject(i))
                 Log.d("Post---------------------",parsedPost.title)
                 Log.d("Post---------------------",parsedPost.author)
+                Log.d("Post AVATAR---------------------",parsedPost.avatar)
                 posts.add(parsedPost)
         }
 
@@ -121,6 +123,7 @@ data class Post (
                 jsonObject.getString("topic_slug"),
                 jsonObject.getString("username"),
                 jsonObject.getInt("topic_id"),
+                jsonObject.getString("avatar_template"),
                 dateFormatted
             )
         }

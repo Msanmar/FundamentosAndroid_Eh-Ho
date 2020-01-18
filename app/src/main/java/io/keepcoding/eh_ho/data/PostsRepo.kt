@@ -12,7 +12,7 @@ import org.json.JSONObject
 object PostsRepo {
 
 
-    val posts: MutableList<Post> = mutableListOf()
+   /* val posts: MutableList<Post> = mutableListOf()
         get() {
             if (field.isEmpty())
                 field.addAll(dummyPosts())
@@ -20,13 +20,13 @@ object PostsRepo {
             return field
         }
 
-
-    fun dummyPosts(count: Int = 50): List<Post> {
+*/
+   /* fun dummyPosts(count: Int = 50): List<Post> {
         return (1..count).map {
           Post(content = "Content $it", title = "Title $it", author = "Author $it", topicId = 1)
         }
     }
-
+*/
     fun getPosts(
         context: Context,
         topicId: Int,

@@ -5,9 +5,5 @@
         android:id="@+id/action_log_out"
         android:title="@string/title_log_out" />
 
-    <item
-        android:id="@+id/action_create_post"
 
-        android:title="Create post"
-        />
 </menu>

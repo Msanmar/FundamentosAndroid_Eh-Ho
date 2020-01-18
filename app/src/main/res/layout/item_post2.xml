@@ -11,6 +11,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:elevation="16dp"
+    android:outlineSpotShadowColor="@color/colorAccent"
     app:cardCornerRadius="8dp">
 
     <LinearLayout
@@ -38,12 +39,13 @@
         android:id="@+id/labelTitlePost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/labelTopicID"
+        android:layout_alignTop="@id/labelUsername"
         android:maxLines="2"
         android:textSize="18sp"
         android:textStyle="bold"
 
         tools:text="Title" />
+
 
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -55,6 +57,13 @@
 
         tools:text="Just now" />
 
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
 
 
 

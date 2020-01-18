@@ -60,7 +60,9 @@ class PostsAdapter (val postClickListener: ((Post) -> Unit)? = null): RecyclerVi
                 field?.let{
                     //labelTitlePost.text = it.title
                    // imageUser = it.
-                    labelTitlePost.text = it.title
+                    var lon = it.title.length
+                    labelTitlePost.text = it.title.substring(3, lon-4)
+                    //labelContentPost.text = it.content
                     labelDatePost.text = it.date.toString()
                     labelTopicID.text = "TopicID: " + it.topicId.toString()
                     labelUsername.text = it.author

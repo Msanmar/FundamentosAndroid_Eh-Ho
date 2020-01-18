@@ -23,9 +23,10 @@ import kotlinx.android.synthetic.main.fragment_posts.buttonCreate
 import kotlinx.android.synthetic.main.fragment_posts.parentLayout
 
 
-class PostsFragment(var topicId: Int = 1): Fragment(), SwipeRefreshLayout.OnRefreshListener{
+class PostsFragment(topicId: Int, topicTitle: String): Fragment(), SwipeRefreshLayout.OnRefreshListener{
 
     var topicID = topicId
+    var topicTitle = topicTitle
 
     var listener: PostsInteractionListener? = null
     lateinit var adapter: PostsAdapter
@@ -88,7 +89,7 @@ class PostsFragment(var topicId: Int = 1): Fragment(), SwipeRefreshLayout.OnRefr
 
 
     buttonCreate.setOnClickListener {
-        goToCreatePost()
+        goToCreatePost(topicID, topicTitle)
     }
 
 
@@ -153,13 +154,13 @@ override fun onResume() {
         Snackbar.make(parentLayout, message, Snackbar.LENGTH_LONG).show()
     }
 
-    private fun goToCreatePost() {
-        listener?.onGoToCreatePost()
+    private fun goToCreatePost(topicID: Int, topicTitle: String) {
+        listener?.onGoToCreatePost(topicID, topicTitle)
     }
 
 //Definición de los métodos de la interfaz
 interface PostsInteractionListener {
-        fun onGoToCreatePost()
+        fun onGoToCreatePost(topicID: Int, topicTitle: String)
         fun onPostSelected()
     }
 }

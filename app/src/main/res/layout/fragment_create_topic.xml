@@ -18,22 +18,30 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_author"
-                android:textSize="18sp"
+                android:text="Creando nuevo topic en Eh-Ho..."
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/inputTitle"
+                android:textAlignment="center"
+                android:layout_marginTop="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_title" />
+                android:gravity="center"
+                android:textColorHint="@color/colorAccent"
+                android:hint="Introduce el título del nuevo topic" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/inputContent"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="top"
-                android:hint="@string/hint_content"
+                android:gravity="center"
+                android:hint="Contenido del nuevo topic"
+                android:textColorHint="@color/colorAccent"
                 android:minHeight="112dp" />
 
         </LinearLayout>

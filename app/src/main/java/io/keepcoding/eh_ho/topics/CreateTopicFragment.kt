@@ -10,6 +10,7 @@ import io.keepcoding.eh_ho.R
 import io.keepcoding.eh_ho.data.CreateTopicModel
 import io.keepcoding.eh_ho.data.RequestError
 import io.keepcoding.eh_ho.data.TopicsRepo
+import io.keepcoding.eh_ho.posts.CreatePostFragment
 import kotlinx.android.synthetic.main.fragment_create_topic.*
 
 const val TAG_LOADING_DIALOG = "loading_dialog"
@@ -17,6 +18,8 @@ const val TAG_LOADING_DIALOG = "loading_dialog"
 class CreateTopicFragment : Fragment() {
 
     var listener: CreateTopicInteractionListener? = null
+
+
     lateinit var loadingDialog: LoadingDialogFragment
 
     override fun onAttach(context: Context) {
@@ -117,4 +120,6 @@ class CreateTopicFragment : Fragment() {
     interface CreateTopicInteractionListener {
         fun onTopicCreated()
     }
+
+
 }

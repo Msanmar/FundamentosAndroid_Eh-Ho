@@ -180,11 +180,11 @@ class TopicsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         listener?.onTopicSelected(it)
     }
 
-        interface TopicsInteractionListener {
+    interface TopicsInteractionListener {
             fun onTopicSelected(topic: Topic)
             fun onGoToCreateTopic()
             fun onLogOut()
-        }
+    }
 
 
 }

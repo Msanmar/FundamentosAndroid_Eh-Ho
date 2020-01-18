@@ -23,11 +23,13 @@ import kotlinx.android.synthetic.main.fragment_create_topic.*
 
 const val TAG_LOADING_DIALOG = "loading_dialog"
 
-class CreatePostFragment() : Fragment() {
+class CreatePostFragment(topicId: Int, topicTitle: String) : Fragment() {
 
 var listener: CreatePostInteractionListener? = null
     lateinit var loadingDialog: LoadingDialogFragment
 
+    var topicID: Int = topicId
+    var topicTitle: String = topicTitle
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -49,6 +51,15 @@ var listener: CreatePostInteractionListener? = null
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_create_post, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //textTopicID.text = topicID.toString()
+        textTopicID.text = topicTitle
+        intTopicID.text = topicID.toString()
+
+         //= topicID.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -79,8 +90,9 @@ var listener: CreatePostInteractionListener? = null
       val model = CreatePostModel(
           inputTitle.text.toString(),
           inputContent.text.toString(),
-          inputTopicID.text.toString()
+            topicID.toString()
       )
+
 
         context?.let{
             enableLoadingDialog(true)
