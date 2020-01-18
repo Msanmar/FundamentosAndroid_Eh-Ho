@@ -98,7 +98,7 @@ data class Post (
 
             for (i in 0 until jsonPosts.length()) {
                 val parsedPost = parsePost(jsonPosts.getJSONObject(i))
-
+                Log.d("Post---------------------",parsedPost.title)
                 posts.add(parsedPost)
         }
 
