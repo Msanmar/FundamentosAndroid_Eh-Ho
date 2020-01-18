@@ -13,6 +13,7 @@ import io.keepcoding.eh_ho.posts.CreatePostFragment
 import io.keepcoding.eh_ho.posts.EXTRA_TOPIC_ID
 import io.keepcoding.eh_ho.posts.PostsActivity
 
+
 const val TRANSACTION_CREATE_TOPIC = "create_topic"
 
 class TopicsActivity : AppCompatActivity(), TopicsFragment.TopicsInteractionListener, CreateTopicFragment.CreateTopicInteractionListener {
@@ -27,6 +28,8 @@ class TopicsActivity : AppCompatActivity(), TopicsFragment.TopicsInteractionList
                 .commit()
         }
     }
+
+
 
     //Métodos interfaz
     override fun onTopicSelected(topic: Topic) {

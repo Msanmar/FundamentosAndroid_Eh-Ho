@@ -69,6 +69,7 @@ class TopicsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         listTopics.adapter = adapter
 
 
+
         listTopics.addOnScrollListener(object : RecyclerView.OnScrollListener(){
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
