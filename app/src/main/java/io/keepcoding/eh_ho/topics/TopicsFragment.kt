@@ -117,10 +117,11 @@ class TopicsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             R.id.action_log_out -> listener?.onLogOut()
             // R.id.action_create_post -> listenerCreatePost?.onCreatePostFromTopics()
 
-
         }
         return super.onOptionsItemSelected(item)
     }
+
+    // ______________________________________LOAD TOPICS____________________________________________
 
     private fun loadTopics() {
         enableLoading(true)
@@ -140,6 +141,8 @@ class TopicsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                 })
         }
     }
+
+    // ______________________________________LOAD TOPICS____________________________________________
 
     private fun enableLoading(enabled: Boolean) {
         viewRetry.visibility = View.INVISIBLE

@@ -34,7 +34,7 @@ class TopicsActivity : AppCompatActivity(), TopicsFragment.TopicsInteractionList
 
     //Métodos interfaz
     override fun onTopicSelected(topic: Topic) {
-        Toast.makeText(this, topic.title, Toast.LENGTH_SHORT).show()
+       //Toast.makeText(this, topic.title, Toast.LENGTH_SHORT).show()
         goToPosts(topic)
     }
 
@@ -59,7 +59,7 @@ class TopicsActivity : AppCompatActivity(), TopicsFragment.TopicsInteractionList
         supportFragmentManager.popBackStack()
     }
 
-    //------------
+
 
 
     private fun goToPosts(topic: Topic) {
@@ -67,7 +67,7 @@ class TopicsActivity : AppCompatActivity(), TopicsFragment.TopicsInteractionList
         intent.putExtra(EXTRA_TOPIC_ID, topic.id)
         intent.putExtra(EXTRA_TOPIC_TITLE, topic.title)
 
-        Toast.makeText(this, "Vamos a post activity", Toast.LENGTH_SHORT).show()
+       // Toast.makeText(this, "Vamos a post activity", Toast.LENGTH_SHORT).show()
         startActivity(intent)
     }
 

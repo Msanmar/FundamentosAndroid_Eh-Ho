@@ -32,7 +32,7 @@ class PostsActivity : AppCompatActivity(), PostsFragment.PostsInteractionListene
         if(topicId != null && topicId.isNotEmpty()) {
             topic_ID = topicId.toInt()
             topic_Title = topicTitle.toString()
-            this.title = "Eh-Ho:       " + topic_Title
+            this.title = "Eh-Ho       " + topic_Title
 
         } else {
             throw IllegalArgumentException("You should provide an id for the topic")

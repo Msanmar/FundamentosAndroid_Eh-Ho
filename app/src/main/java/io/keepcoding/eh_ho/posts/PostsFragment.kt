@@ -70,7 +70,7 @@ class PostsFragment(topicId: Int, topicTitle: String): Fragment(), SwipeRefreshL
        // adapter.setPosts(PostsRepo.posts)
     listPosts.adapter = adapter
 
- Log.d("SCROOOOOOOOLLLLLLL", listPosts.scrollState.toString())
+    Log.d("SCROOOOOOOOLLLLLLL", listPosts.scrollState.toString())
 
 
        listPosts.addOnScrollListener(object : RecyclerView.OnScrollListener(){
@@ -114,12 +114,13 @@ override fun onResume() {
     loadPosts()
 }
 
+    // ______________________________________LOAD POSTS____________________________________________
 
     private fun loadPosts() {
        // enableLoading(true)
 
        // adapter.setPosts(PostsRepo.posts)
-//TODO: mostrar la lista de posts en el RV como cardview (cambiar el item_post)
+
         context?.let {
             PostsRepo.getPosts(it, topicID,
                 {
@@ -137,7 +138,7 @@ override fun onResume() {
     }
 
     private fun detailPost(post: Post){
-
+    Log.d("Post detail", post.title)
     }
 
     private fun handleRequestError(requestError: RequestError) {
@@ -159,7 +160,7 @@ override fun onResume() {
     }
 
 //Definición de los métodos de la interfaz
-interface PostsInteractionListener {
+    interface PostsInteractionListener {
         fun onGoToCreatePost(topicID: Int, topicTitle: String)
         fun onPostSelected()
     }
